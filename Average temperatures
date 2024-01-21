@@ -1,0 +1,42 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		 ArrayList<Integer> dailyTemps = new ArrayList<>();
+         ArrayList<String> weekdays = new ArrayList<>();
+         
+
+         weekdays.add("Monday");weekdays.add("Tuesday");weekdays.add("Wednesday"); weekdays.add("Thursday"); weekdays.add("Friday");weekdays.add("Friday"); weekdays.add("Saturday");weekdays.add("Sunday"); // Compose Arrays list of weekdays (<onday to Sunday)
+         dailyTemps.add(35); dailyTemps.add(30);dailyTemps.add(27);dailyTemps.add(33); dailyTemps.add(22);dailyTemps.add(41);dailyTemps.add(49);//Compose Arrays list of daily temperature 2024 Winter in West Virginia
+         
+         Scanner scn = new Scanner(System.in);
+         System.out.println("Welcone to program week five the daily temperature is in West Virgina: ");
+         System.out.println("Enter the week day that you would like to know the daily temperature is in West Virgina: ");
+         String wkDay = scn.nextLine();
+			 scn.close();
+			 
+
+         int indexOfWeekDay = weekdays.indexOf(wkDay);
+         if(indexOfWeekDay != -1) {
+             //User input specific weekday:
+             System.out.print("The temperature in " + weekdays.get(indexOfWeekDay) +" is " + dailyTemps.get(indexOfWeekDay) + " degrees.");
+         }
+         
+         else if(wkDay.equals("week")) {    //User input what is the average tempts.
+            
+            
+             float averageTemp = 0; 
+             for (Integer dayTemp : dailyTemps) { 
+                 averageTemp += dayTemp;
+             }
+             averageTemp /= dailyTemps.size();
+             System.out.print("The average temperature for this week is " + averageTemp + " degrees.");
+             
+         }
+         
+
+	}
+
+ }
